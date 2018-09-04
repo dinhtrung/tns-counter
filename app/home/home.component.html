@@ -1,0 +1,36 @@
+<ActionBar title="Your Counters" class="action-bar">
+	<ActionItem ios.systemIcon="4" android.systemIcon="ic_menu_add" (tap)="addNew()" ios.position="right"></ActionItem>
+</ActionBar>
+
+
+
+<StackLayout>
+	<FlexboxLayout alignContent="flex-start" class="p-15">
+		<Label text="" flexGrow="1" class="p-2"></Label>
+		<Label text="TH2" class="p-2"></Label>
+		<Label text="TH3" class="p-2"></Label>
+		<Label text="TH4" class="p-2"></Label>
+		<Label text="TH5" class="p-2"></Label>
+		<Label text="TH6" class="p-2"></Label>
+		<Label text="TH7" class="p-2"></Label>
+		<Label text="CN" class="p-2"></Label>
+	</FlexboxLayout>
+
+	<ListView class="list-group" [items]="items">
+		<ng-template let-item="item" let-i="index">
+			<GridLayout columns="60, auto, *, *, *, *, *, *, *" class="list-group-item">
+				<circularProgressBar row="0" col="0" [progress]="item.progress" size="30"></circularProgressBar>
+				<Label (tap)="showItem(item)" (longPress)="removeItem(item)" [text]="item.title" row="0" col="1" class="p-t-2 p-x-15"></Label>
+<Label (tap)="incItem(item, 0)" (longPress)="decItem(item, 0)" [text]="item.cnt[0]" row="0" col="2" class="p-1"></Label>
+<Label (tap)="incItem(item, 1)" (longPress)="decItem(item, 1)" [text]="item.cnt[1]" row="0" col="3" class="p-1"></Label>
+<Label (tap)="incItem(item, 2)" (longPress)="decItem(item, 2)" [text]="item.cnt[2]" row="0" col="4" class="p-1"></Label>
+<Label (tap)="incItem(item, 3)" (longPress)="decItem(item, 3)" [text]="item.cnt[3]" row="0" col="5" class="p-1"></Label>
+<Label (tap)="incItem(item, 4)" (longPress)="decItem(item, 4)" [text]="item.cnt[4]" row="0" col="6" class="p-1"></Label>
+<Label (tap)="incItem(item, 5)" (longPress)="decItem(item, 5)" [text]="item.cnt[5]" row="0" col="7" class="p-1"></Label>
+<Label (tap)="incItem(item, 6)" (longPress)="decItem(item, 6)" [text]="item.cnt[6]" row="0" col="8" class="p-1"></Label>
+			</GridLayout>
+		</ng-template>
+	</ListView>
+
+	
+</StackLayout>
